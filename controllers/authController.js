@@ -50,7 +50,14 @@ export const registerController = async (req, res) => {
     res.status(201).send({
       success: true,
       message: "User Register Successfully",
-      user,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+        role: user.role,
+      },
     });
   } catch (error) {
     console.log(error);
@@ -187,7 +194,14 @@ export const updateProfileController = async (req, res) => {
     res.status(200).send({
       success: true,
       message: "Profile Updated SUccessfully",
-      updatedUser,
+      updatedUser: {
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        phone: updatedUser.phone,
+        address: updatedUser.address,
+        role: updatedUser.role,
+      },
     });
   } catch (error) {
     console.log(error);
